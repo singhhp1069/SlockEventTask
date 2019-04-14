@@ -1,0 +1,41 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="container-fluid">
+  <div class="row">
+      <h1>
+          Welcome to {{ title }}!
+        </h1>
+    <h2 *ngIf="loading">Wait Loading...</h2>
+    <h2 *ngIf="error">Error Occurred: {{error}}</h2>
+    <div class="col-md-12">
+        <div class="panel-body">
+    <table *ngIf="!loading" class="table table-hover table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Address</th>
+          <th scope="col">Block Number</th>
+          <th scope="col">Transaction Hash</th>
+          <th scope="col">Transaction Index</th>
+          <th scope="col">Event</th>
+          <th scope="col">Owner</th>
+          <th scope="col">Signature</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let event of events">
+          <tr>
+            <td>{{event.id}}</td>
+            <td>{{event.address}}</td>
+            <td>{{event.blockNumber}}</td>
+            <td>{{event.transactionHash}}</td>
+            <td>{{event.transactionIndex}}</td>
+            <td>{{event.event}}</td>
+            <td>{{event.returnValues.owner}}</td>
+            <td>{{event.signature}}</td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
+</div>
+
